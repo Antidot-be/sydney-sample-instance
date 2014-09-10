@@ -1,0 +1,12 @@
+# Apparently there are few directories in the www rep of each instance
+User-agent: *
+Disallow: /assets/Scripts/
+Disallow: /admin
+
+# This will give the sitemap address to the bots when it will be available
+# Sitemap:  http://www.domain.com/sitemap.xml
+
+# The following pages and folder exclusions might useful for future needs we never know
+# Disallow: /login
+# Disallow: /admin
+# Disallow: /cgi-bin/
