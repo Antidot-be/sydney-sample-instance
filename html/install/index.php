@@ -28,10 +28,6 @@ if (!is_readable($zendLibPath.'/Zend/Loader/Autoloader.php')) {
 }
 
 
-
-$currentApacheUser = posix_getpwuid(posix_geteuid());
-$currentApacheUser = $currentApacheUser['name'];
-
 $mustWritablePaths = array(
     __DIR__ . '/../../config/',
     __DIR__ . '/../../var/',
