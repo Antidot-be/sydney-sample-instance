@@ -1,5 +1,5 @@
 <?php
-include_once('../../../core/library/Sydney/Bootstrapper.php');
+include_once '../../../core/library/Sydney/Bootstrapper.php';
 
 $modules = array(
     'default',
@@ -7,7 +7,8 @@ $modules = array(
     'publicms'
 );
 $app = new Sydney_Bootstrapper();
-$app->setCorePath(realpath(__DIR__.'/../../core'));
+// If you want to re-locate the core just change the following :
+$app->setCorePath(realpath(__DIR__.'/../../../core'));
 $app->setInstancePath(realpath(__DIR__.'/../'));
 $app->setModules($modules);
 $app->run();
