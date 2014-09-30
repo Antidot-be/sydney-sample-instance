@@ -200,19 +200,6 @@ INSERT INTO `languages` (`id`, `label`, `isocode`, `active`) VALUES
 (186, 'Zulu', 'zu', 1);
 
 --
--- Dumping data for table `pagdivtypes`
---
-
-INSERT INTO `pagdivtypes` (`id`, `safmodules_id`, `label`, `desc`, `online`, `helper`, `helperadmin`, `code`, `developeronly`) VALUES
-(1, 15, 'Heading', 'Heading title of type H1, H2, and so on', 1, 'ContentHeading', 'EditorHeading', 'heading', 0),
-(2, 15, 'Text bloc', 'Text block editable with a WYSIWYG editor in the admin interface', 1, 'ContentText', 'EditorText', 'text', 0),
-(3, 12, 'File', 'Files of any kind from the file manager', 1, 'ContentFile', 'EditorFiles', 'files', 0),
-(4, 15, 'View embeder', 'Embeds a view without layout within another view', 1, 'ContentViewembeder', 'EditorViewembeder', 'viewembeder', 0),
-(5, 15, 'Back to top', 'Insert a link to go to the top of the page', 1, 'ContentGototop', 'EditorGototop', 'gototop', 0),
-(6, 15, 'Plain text/HTML', 'Free text area for plain text or HTML', 1, 'ContentFreeText', 'EditorFreeText', 'freetext', 1);
-
-
---
 -- Dumping data for table `usersgroups`
 --
 
