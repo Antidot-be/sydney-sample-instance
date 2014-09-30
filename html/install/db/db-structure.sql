@@ -589,6 +589,9 @@ ALTER TABLE `pagstats`
 ALTER TABLE `pagstructure`
  ADD PRIMARY KEY (`id`), ADD KEY `parent_id` (`parent_id`), ADD KEY `safinstances_id` (`safinstances_id`), ADD KEY `pagorder` (`pagorder`), ADD KEY `usersgroups_id` (`usersgroups_id`);
 
+ALTER TABLE `pagdivs`
+ADD PRIMARY KEY (`id`), ADD KEY `usersgroups_id` (`usersgroups_id`);
+
 --
 -- Indexes for table `pagstructure_pagdivs`
 --
