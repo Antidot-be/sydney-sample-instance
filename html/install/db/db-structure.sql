@@ -200,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `pagdivs` (
   `params_draft` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `content` longtext CHARACTER SET utf8,
   `content_draft` longtext CHARACTER SET utf8 NOT NULL,
-  `pagdivtypes_id` bigint(20) DEFAULT NULL,
+  `content_type_label` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `status` enum('draft','revised','published','restored') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'draft',
   `datecreated` timestamp NULL DEFAULT NULL,
   `datemodified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -209,25 +209,7 @@ CREATE TABLE IF NOT EXISTS `pagdivs` (
   `isDeleted` smallint(1) NOT NULL DEFAULT '0',
   `wrkstatuses_id` bigint(20) NOT NULL,
   `online` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Piece of element (or DIV) included in a page.';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pagdivtypes`
---
-
-CREATE TABLE IF NOT EXISTS `pagdivtypes` (
-`id` bigint(20) NOT NULL,
-  `safmodules_id` bigint(20) NOT NULL,
-  `label` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
-  `desc` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `online` tinyint(1) NOT NULL DEFAULT '1',
-  `helper` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `helperadmin` varchar(150) CHARACTER SET utf8 NOT NULL,
-  `code` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `developeronly` tinyint(1) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains the types of element we can use.';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Piece of element (or DIV) included in a page.';
 
 -- --------------------------------------------------------
 
@@ -582,17 +564,6 @@ ALTER TABLE `filtype`
 ALTER TABLE `languages`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `pagdivs`
---
-ALTER TABLE `pagdivs`
- ADD PRIMARY KEY (`id`), ADD KEY `pagdivtypes_id` (`pagdivtypes_id`), ADD KEY `usersgroups_id` (`usersgroups_id`), ADD KEY `wrkstatuses_id` (`wrkstatuses_id`);
-
---
--- Indexes for table `pagdivtypes`
---
-ALTER TABLE `pagdivtypes`
- ADD PRIMARY KEY (`id`), ADD KEY `safmodules_id` (`safmodules_id`);
 
 --
 -- Indexes for table `pagmenus`
@@ -753,11 +724,6 @@ MODIFY `id` bigint(21) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `pagdivs`
 MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `pagdivtypes`
---
-ALTER TABLE `pagdivtypes`
-MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `pagmenus`
 --
 ALTER TABLE `pagmenus`
@@ -875,12 +841,6 @@ ADD CONSTRAINT `filfolders_users_ibfk_2` FOREIGN KEY (`users_id`) REFERENCES `us
 ALTER TABLE `filmetadata_filtype`
 ADD CONSTRAINT `filmetadata_filtype_ibfk_1` FOREIGN KEY (`filmetadata_id`) REFERENCES `filmetadata` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `filmetadata_filtype_ibfk_2` FOREIGN KEY (`filtype_id`) REFERENCES `filtype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `pagdivs`
---
-ALTER TABLE `pagdivs`
-ADD CONSTRAINT `pagdivs_ibfk_1` FOREIGN KEY (`pagdivtypes_id`) REFERENCES `pagdivtypes` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `pagmenus_safinstances`

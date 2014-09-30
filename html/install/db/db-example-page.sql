@@ -11,8 +11,8 @@ INSERT INTO `pagstructure` (`id`, `label`, `htmltitle`, `url`, `metadesc`, `meta
 
 
 
-INSERT INTO `pagdivs` (`id`, `label`, `params`, `params_draft`, `content`, `content_draft`, `pagdivtypes_id`, `status`, `datecreated`, `datemodified`, `order`, `usersgroups_id`, `isDeleted`, `wrkstatuses_id`, `online`) VALUES
-(1, NULL, '', NULL, '<p>Hi !</p>\n\n<p>This is an example content page.<br />\nYou can edit it as you want.</p>\n', '', 2, 'published', NOW(), NOW(), 1, 1, 0, 0, 1);
+INSERT INTO `pagdivs` (`id`, `label`, `params`, `params_draft`, `content`, `content_draft`, `content_type_label`, `status`, `datecreated`, `datemodified`, `order`, `usersgroups_id`, `isDeleted`, `wrkstatuses_id`, `online`) VALUES
+(1, NULL, '', NULL, '<p>Hi !</p>\n\n<p>This is an example content page.<br />\nYou can edit it as you want.</p>\n', '', 'text-block', 'published', NOW(), NOW(), 1, 1, 0, 0, 1);
 
 
 INSERT INTO `pagstructure_pagdivs` (`pagstructure_id`, `pagdivs_id`, `id`, `order`, `zone`) VALUES (1, 1, 1, 1, NULL);
