@@ -16,4 +16,6 @@ $app->setModules(array(
     'publicms'
 ));
 $app->registerDefaultHelpers();
+$app->registerContentTypeHelper('goto-top-block', 'Goto top', 'publicGotoTopView', 'privateGotoTopView', 'editorGotoTopView');
+$app->registerContentTypeHelper('carousel-block', 'Carousel', 'publicCarouselView', 'privateCarouselView', 'editorCarouselView');
 $app->run();
