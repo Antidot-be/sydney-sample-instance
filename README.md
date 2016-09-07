@@ -1,7 +1,7 @@
 # This is a sample webinstance #
 
 This sample webinstance has the minimal structure to work with [sydney-core](https://github.com/Antidot-be/sydney-core).  
-For more information about the installation please [read this doc](https://github.com/Antidot-be/sydney-core/doc/install.md)
+For more information about the installation please [read this doc](https://github.com/Antidot-be/sydney-core/blob/master/doc/install.md)
 
 Explanations about all the folders :  
 `config/` : contains all the config files for you instance. (db, general, ..).  
